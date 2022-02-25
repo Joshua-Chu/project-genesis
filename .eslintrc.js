@@ -25,7 +25,7 @@ module.exports = {
         },
     },
 
-    plugins: ["@typescript-eslint", "plugin:prettier/recommended"],
+    plugins: ["@typescript-eslint"],
     extends: [
         "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended",
@@ -42,5 +42,13 @@ module.exports = {
     rules: {
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-explicit-any": "error",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                extensions: [".ts", ".tsx", ".js", ".jsx"],
+            },
+        ],
+        "react/jsx-props-no-spreading": "off",
     },
 };
