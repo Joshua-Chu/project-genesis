@@ -1,6 +1,6 @@
-const Home = () => {
+function Home() {
     const name = "joshua";
-    return <></>;
-};
+    return <h1>{name}</h1>;
+}
 
 export default Home;
