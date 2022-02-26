@@ -3,7 +3,7 @@ function Home() {
     return (
         <div>
             <h1>Hello {name}!</h1>
-            <img src="/profile-pic.png" alt="profile" />
+            <img src="/project-genesis/profile-pic.png" alt="profile" />
         </div>
     );
 }
