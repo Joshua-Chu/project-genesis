@@ -1,6 +1,11 @@
 function Home() {
     const name = "joshua";
-    return <h1>{name}</h1>;
+    return (
+        <div>
+            <h1>Hello {name}!</h1>
+            <img src="/profile-pic.png" alt="profile" />
+        </div>
+    );
 }
 
 export default Home;
