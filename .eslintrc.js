@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     parserOptions: {
         ecmaVersion: 2020,
         sourceType: "module",
@@ -31,7 +32,6 @@ module.exports = {
         "airbnb",
         "prettier",
         "plugin:jsx-a11y/recommended",
-        "plugin:react/recommended",
         "plugin:prettier/recommended",
         "plugin:sonarjs/recommended",
         "plugin:security/recommended",
@@ -60,5 +60,4 @@ module.exports = {
             },
         ],
     },
-    root: true,
 };
