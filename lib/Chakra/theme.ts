@@ -10,6 +10,11 @@ const theme = extendTheme({
             500: "#88C0D0",
         },
     },
+
+    fonts: {
+        heading: "Lato, sans-serif",
+        body: "Roboto, sans-serif",
+    },
 });
 
 export default theme;
