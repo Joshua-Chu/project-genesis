@@ -16,7 +16,7 @@
         "@fontsource/lato": "^4.5.2",
         "@fontsource/roboto": "^4.5.3",
         "@typescript-eslint/eslint-plugin": "^5.12.1",
-        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-airbnb": "^18.2.1",
         "eslint-config-prettier": "^8.4.0",
         "eslint-plugin-jsx-a11y": "^6.5.1",
         "eslint-plugin-prettier": "^4.0.0",
