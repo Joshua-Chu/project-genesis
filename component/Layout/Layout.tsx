@@ -1,16 +1,14 @@
-import { Box, Button, Container, useColorMode } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 
 type LayoutProps = {
     children: React.ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
-    const { toggleColorMode } = useColorMode();
     return (
         <Box>
-            <Button onClick={toggleColorMode} />
-
             <Container
                 maxW={{
                     base: "container.sm",
@@ -18,7 +16,8 @@ const Layout = ({ children }: LayoutProps) => {
                     xl: "container.xl",
                 }}
             >
-                {children}
+                <Navbar />
+                <Box pt="64px">{children}</Box>
             </Container>
         </Box>
     );
