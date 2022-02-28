@@ -50,13 +50,17 @@ const Navbar = () => {
                     </NextLink>
                 </Stack>
                 <IconButton aria-label="Toggle theme" onClick={toggleColorMode}>
-                    {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                    {colorMode === "light" ? (
+                        <MoonIcon boxSize="4" />
+                    ) : (
+                        <SunIcon boxSize="4" />
+                    )}
                 </IconButton>
                 <Box ml={2} display={{ base: "inline-block", md: "none" }}>
                     <Menu isLazy>
                         <MenuButton
                             as={IconButton}
-                            icon={<HamburgerIcon />}
+                            icon={<HamburgerIcon boxSize="4" />}
                             variant="outline"
                             aria-label="Options"
                         />

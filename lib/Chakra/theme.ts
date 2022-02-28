@@ -23,7 +23,8 @@ const theme = extendTheme({
     },
 
     fontSizes: {
-        md: "2.67   rem",
+        md: "2.67rem",
+        lg: "4rem",
     },
 
     global: {

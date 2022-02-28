@@ -12,12 +12,12 @@ const Layout = ({ children }: LayoutProps) => {
             <Container
                 maxW={{
                     base: "container.sm",
-                    lg: "container.lg",
-                    xl: "container.xl",
+                    lg: "container.md",
+                    xl: "container.lg",
                 }}
             >
                 <Navbar />
-                <Box pt="64px">{children}</Box>
+                <Box mt="64px">{children}</Box>
             </Container>
         </Box>
     );
