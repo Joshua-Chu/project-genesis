@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Button, Container, useColorMode } from "@chakra-ui/react";
 import React from "react";
 
 type LayoutProps = {
@@ -6,11 +6,20 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+    const { toggleColorMode } = useColorMode();
     return (
         <Box>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <Container>{children}</Container>
+            <Button onClick={toggleColorMode} />
+
+            <Container
+                maxW={{
+                    base: "container.sm",
+                    lg: "container.lg",
+                    xl: "container.xl",
+                }}
+            >
+                {children}
+            </Container>
         </Box>
     );
 };

@@ -1,6 +1,12 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+
+const config: ThemeConfig = {
+    initialColorMode: "light",
+    useSystemColorMode: false,
+};
 
 const theme = extendTheme({
+    config,
     colors: {
         brand: {
             100: "#ECEFF4",
@@ -14,6 +20,18 @@ const theme = extendTheme({
     fonts: {
         heading: "Lato, sans-serif",
         body: "Roboto, sans-serif",
+    },
+
+    fontSizes: {
+        md: "2.67   rem",
+    },
+
+    global: {
+        styles: {
+            html: {
+                fontSize: "16px",
+            },
+        },
     },
 });
 

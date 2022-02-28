@@ -6,7 +6,7 @@ import Layout from "../component/Layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <ChakraProvider theme={theme}>
+        <ChakraProvider theme={theme} resetCSS>
             <Layout>
                 <Component {...pageProps} />;
             </Layout>
