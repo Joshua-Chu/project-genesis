@@ -152,7 +152,7 @@ function Home() {
             <div className="spacer wave-2">
                 <Box textAlign="center">
                     <Heading
-                        pt="48px"
+                        pt="32px"
                         as="h3"
                         color="brand.500"
                         fontSize={["1.1rem", "40.5px"]}
@@ -160,7 +160,7 @@ function Home() {
                         projects.
                     </Heading>
 
-                    <Flex justifyContent="center">
+                    <Flex justifyContent="center" mt="32px">
                         <Image
                             src="/wip.png"
                             alt="profile"
@@ -178,6 +178,36 @@ function Home() {
                     </Heading>
                 </Box>
             </div>
+
+            <Section>
+                <Flex
+                    direction="column"
+                    gap="16px"
+                    alignItems={["center", "center", "flex-end"]}
+                >
+                    <Text
+                        fontSize={[".8rem", "sm"]}
+                        textAlign="left"
+                        as="p"
+                        color={colorMode === "light" ? "brand.200" : "white"}
+                    >
+                        I once heard that - Ideas are only as good as the
+                        actions that <br />
+                        follow the communication of those ideas.
+                    </Text>
+                    <Heading
+                        as="h4"
+                        color={colorMode === "light" ? "brand.200" : "white"}
+                        fontSize={["1.1rem", "40.5px"]}
+                    >
+                        Let&apos;s make it happen.
+                    </Heading>
+
+                    <NextLink href="/" passHref>
+                        <Link>@heyjoshchu</Link>
+                    </NextLink>
+                </Flex>
+            </Section>
         </>
     );
 }
