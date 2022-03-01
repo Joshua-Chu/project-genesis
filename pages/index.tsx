@@ -108,7 +108,7 @@ function Home() {
                             fontWeight="bold"
                             color="white"
                             pt="48px"
-                            fontSize={["1.1rem", "40.5px"]}
+                            fontSize={["1.1rem", "1.5rem", "2rem"]}
                         >
                             “Growth means being comfortable <br /> with being
                             uncomfortable”
@@ -117,7 +117,10 @@ function Home() {
                             color="white"
                             mt="32px"
                             maxW="790px"
-                            templateColumns={["1fr", "repeat(2, 1fr)"]}
+                            templateColumns={{
+                                base: "1fr",
+                                lg: "repeat(2, 1fr)",
+                            }}
                             gap={7}
                             px={["0px", "4"]}
                             mx="auto"
@@ -155,7 +158,8 @@ function Home() {
                         pt="32px"
                         as="h3"
                         color="brand.500"
-                        fontSize={["1.1rem", "40.5px"]}
+                        // fontSize={["1.1rem", "40.5px"]}
+                        fontSize={["2.5rem", "md"]}
                     >
                         projects.
                     </Heading>
@@ -181,19 +185,21 @@ function Home() {
 
             <Section>
                 <Flex
+                    mb={500}
+                    maxW={790}
                     direction="column"
                     gap="16px"
                     alignItems={["center", "center", "flex-end"]}
                 >
                     <Text
+                        maxW={450}
                         fontSize={[".8rem", "sm"]}
-                        textAlign="left"
+                        textAlign={["center", "center", "left"]}
                         as="p"
                         color={colorMode === "light" ? "brand.200" : "white"}
                     >
                         I once heard that - Ideas are only as good as the
-                        actions that <br />
-                        follow the communication of those ideas.
+                        actions that follow the communication of those ideas.
                     </Text>
                     <Heading
                         as="h4"

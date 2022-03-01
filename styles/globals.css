@@ -42,3 +42,18 @@ a {
     background-size: cover;
     background-position: top center, 50%, 50%;
 }
+
+.wave-3 {
+    width: 100%;
+    min-height: 200px;
+    background-image: url("/footer-wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center, 50%, 50%;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}

@@ -1,5 +1,6 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 
 type LayoutProps = {
@@ -8,10 +9,13 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
-        <Box>
+        <Flex pt={50} minH="100vh" direction="column">
             <Navbar />
-            <Box mt="64px">{children}</Box>
-        </Box>
+            <Box mt="64px" flexGrow="1">
+                {children}
+            </Box>
+            <Footer />
+        </Flex>
     );
 };
 
