@@ -33,3 +33,12 @@ a {
     background-size: cover;
     background-position: bottom center, 50%, 50%;
 }
+
+.wave-2 {
+    height: 500px;
+    width: 100%;
+    background-image: url("/wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center, 50%, 50%;
+}

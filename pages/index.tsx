@@ -48,7 +48,7 @@ function Home() {
                             fontSize={["2.5rem", "lg"]}
                             color="brand.500"
                         >
-                            your front-end <br /> developer
+                            your front-end <br /> developer.
                         </Heading>
 
                         <Text
@@ -77,6 +77,7 @@ function Home() {
                     </Flex>
                 </Section>
             </Flex>
+
             <div className="spacer wave-1">
                 <Box
                     mx="auto"
@@ -96,9 +97,10 @@ function Home() {
                     <Image src="/banner.jpg" alt="banner" layout="fill" />
                 </Box>
             </div>
+
             <div style={{ background: "#2E3440" }}>
                 <Section>
-                    <Box bg="brand.400">
+                    <Box bg="brand.400" pb="64px">
                         <Heading
                             as="h3"
                             textAlign="center"
@@ -114,7 +116,6 @@ function Home() {
                         <Grid
                             color="white"
                             mt="32px"
-                            w="80%"
                             maxW="790px"
                             templateColumns={["1fr", "repeat(2, 1fr)"]}
                             gap={7}
@@ -146,6 +147,36 @@ function Home() {
                         </Grid>
                     </Box>
                 </Section>
+            </div>
+
+            <div className="spacer wave-2">
+                <Box textAlign="center">
+                    <Heading
+                        pt="48px"
+                        as="h3"
+                        color="brand.500"
+                        fontSize={["1.1rem", "40.5px"]}
+                    >
+                        projects.
+                    </Heading>
+
+                    <Flex justifyContent="center">
+                        <Image
+                            src="/wip.png"
+                            alt="profile"
+                            width={180}
+                            height={250}
+                            className="hero-image"
+                        />
+                    </Flex>
+                    <Heading
+                        as="h3"
+                        color={colorMode === "light" ? "brand.300" : "white"}
+                        fontSize={["1.1rem", "40.5px"]}
+                    >
+                        coming soon...
+                    </Heading>
+                </Box>
             </div>
         </>
     );
