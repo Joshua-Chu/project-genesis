@@ -220,7 +220,7 @@ function Home() {
             </div>
 
             <Section>
-                <Flex mb={500} maxW={790} justifyContent="flex-end">
+                <Flex mb={500} maxW={826} justifyContent="flex-end">
                     <ContactFlex
                         direction="column"
                         gap="16px"
