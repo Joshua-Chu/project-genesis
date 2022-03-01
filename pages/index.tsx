@@ -36,19 +36,24 @@ function Home() {
                     >
                         <Heading
                             as="h2"
-                            fontSize="md"
+                            fontSize={["1.8rem", "md"]}
                             color={
                                 colorMode === "light" ? "brand.300" : "white"
                             }
                         >
                             Hi, I&apos;m Josh —
                         </Heading>
-                        <Heading as="h2" fontSize="lg" color="brand.500">
+                        <Heading
+                            as="h2"
+                            fontSize={["2.5rem", "lg"]}
+                            color="brand.500"
+                        >
                             your front-end <br /> developer
                         </Heading>
 
                         <Text
                             as="p"
+                            fontSize={[".8rem", "sm"]}
                             color={
                                 colorMode === "light" ? "brand.200" : "white"
                             }
@@ -58,7 +63,7 @@ function Home() {
                             that champion the same ideas that I hold.
                         </Text>
 
-                        <Flex gap="48px" justifyContent="center" mt="32px">
+                        <Flex gap="48px" justifyContent="center" mt="16px">
                             <NextLink href="/" passHref>
                                 <Link>projects</Link>
                             </NextLink>
@@ -74,6 +79,7 @@ function Home() {
             </Flex>
             <div className="spacer wave-1">
                 <Box
+                    mx="auto"
                     textAlign="center"
                     mt="48px"
                     sx={{
@@ -82,13 +88,12 @@ function Home() {
                             zIndex: 100,
                         },
                     }}
+                    maxW={[360, 500, 790]}
+                    maxH={[250, 450]}
+                    h={[335, 335, 450]}
+                    position="relative"
                 >
-                    <Image
-                        src="/banner.jpg"
-                        alt="banner"
-                        width={790}
-                        height={335}
-                    />
+                    <Image src="/banner.jpg" alt="banner" layout="fill" />
                 </Box>
             </div>
             <div style={{ background: "#2E3440" }}>
@@ -101,6 +106,7 @@ function Home() {
                             fontWeight="bold"
                             color="white"
                             pt="48px"
+                            fontSize={["1.1rem", "40.5px"]}
                         >
                             “Growth means being comfortable <br /> with being
                             uncomfortable”
@@ -110,9 +116,9 @@ function Home() {
                             mt="32px"
                             w="80%"
                             maxW="790px"
-                            templateColumns="repeat(2, 1fr)"
+                            templateColumns={["1fr", "repeat(2, 1fr)"]}
                             gap={7}
-                            px="4"
+                            px={["0px", "4"]}
                             mx="auto"
                         >
                             <GridItem>
