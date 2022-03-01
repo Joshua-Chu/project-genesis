@@ -35,11 +35,12 @@ const ContactFlex = styled<ContactFlexProps & typeof Flex>(Flex)`
 
     &:hover .contact-overlay {
         background: ${({ islightmode }) =>
-            islightmode === "light" ? "#2e3440" : "#88C0D0"};
+            islightmode === "light" ? "#2e3440" : "#5e81ac"};
         clip-path: circle(75%);
     }
 
     &:hover * {
+        /* color: #2e3440; */
         color: white;
     }
 
