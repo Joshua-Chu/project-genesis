@@ -67,5 +67,6 @@ module.exports = {
                 aspects: ["invalidHref", "preferButton"],
             },
         ],
+        "no-nested-ternary": "off",
     },
 };

@@ -9,7 +9,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
-        <Flex pt={50} minH="100vh" direction="column">
+        <Flex pt={50} minH="100vh" direction="column" position="relative">
             <Navbar />
             <Box mt="64px" flexGrow="1">
                 {children}
