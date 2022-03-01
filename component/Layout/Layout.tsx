@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 
@@ -9,16 +9,8 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <Box>
-            <Container
-                maxW={{
-                    base: "container.sm",
-                    lg: "container.md",
-                    xl: "container.lg",
-                }}
-            >
-                <Navbar />
-                <Box mt="64px">{children}</Box>
-            </Container>
+            <Navbar />
+            <Box mt="64px">{children}</Box>
         </Box>
     );
 };
