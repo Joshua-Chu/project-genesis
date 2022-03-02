@@ -35,10 +35,10 @@ const Navbar = () => {
             w="100%"
             bg={
                 colorMode === "light"
-                    ? yPos === 0
+                    ? !yPos || yPos === 0
                         ? "transparent"
                         : "brand.600"
-                    : yPos === 0
+                    : !yPos || yPos === 0
                     ? "transparent"
                     : "brand.700"
             }
