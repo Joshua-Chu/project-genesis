@@ -49,6 +49,7 @@ type ContactProps = {
 const Contact = ({ colorMode }: ContactProps) => {
     return (
         <ContactFlex
+            mt="64px"
             direction="column"
             gap="16px"
             p={8}

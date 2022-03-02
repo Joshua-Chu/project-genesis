@@ -4,7 +4,7 @@ import Section from "./Section";
 const About = () => {
     return (
         <Section>
-            <Box bg="brand.400" pb="64px">
+            <Box bg="brand.400" pb="64px" id="about-section">
                 <Heading
                     as="h3"
                     textAlign="center"

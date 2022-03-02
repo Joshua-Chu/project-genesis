@@ -43,11 +43,11 @@ const Hero = ({ colorMode }: HeroProps) => {
                 </Text>
 
                 <Flex gap="48px" justifyContent="center" mt="16px">
-                    <LinkItem type="secondary" href="/projects">
+                    <LinkItem type="secondary" href="#projects-section">
                         projects
                     </LinkItem>
 
-                    <LinkItem type="primary" href="/about">
+                    <LinkItem type="primary" href="/Joshua-Chu.pdf" isDownload>
                         <Text color="brand.500" fontWeight="bold">
                             resume
                         </Text>

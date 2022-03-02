@@ -46,14 +46,19 @@ type LinkItemProps = {
     href: string;
     children: React.ReactNode;
     type: "primary" | "secondary";
+    isDownload?: boolean;
 };
 
-const LinkItem = ({ href, children, type }: LinkItemProps) => {
+const LinkItem = ({ href, children, type, isDownload }: LinkItemProps) => {
     const { colorMode } = useColorMode();
 
     return (
         <NextLink href={href} passHref>
-            <StyledLinks colormode={colorMode} type={type}>
+            <StyledLinks
+                colormode={colorMode}
+                type={type}
+                download={isDownload}
+            >
                 {children}
             </StyledLinks>
         </NextLink>
@@ -61,3 +66,7 @@ const LinkItem = ({ href, children, type }: LinkItemProps) => {
 };
 
 export default LinkItem;
+
+LinkItem.defaultProps = {
+    isDownload: false,
+};

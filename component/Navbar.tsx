@@ -65,16 +65,20 @@ const Navbar = () => {
                             pr="32px"
                             display={{ base: "none", md: "flex" }}
                         >
-                            <LinkItem type="secondary" href="/blogs">
+                            {/* <LinkItem type="secondary" href="/blogs">
                                 blogs
-                            </LinkItem>
-                            <LinkItem type="secondary" href="/projects">
+                            </LinkItem> */}
+                            <LinkItem type="secondary" href="#projects-section">
                                 projects
                             </LinkItem>
-                            <LinkItem type="secondary" href="/about">
+                            <LinkItem type="secondary" href="#about-section">
                                 about
                             </LinkItem>
-                            <LinkItem type="primary" href="/about">
+                            <LinkItem
+                                type="primary"
+                                href="/Joshua-Chu.pdf"
+                                isDownload
+                            >
                                 <Text color="brand.500">resume</Text>
                             </LinkItem>
                         </Stack>
@@ -100,16 +104,14 @@ const Navbar = () => {
                                     aria-label="Options"
                                 />
                                 <MenuList>
-                                    <NextLink href="/" passHref>
-                                        <MenuItem as={Link}>blogs</MenuItem>
-                                    </NextLink>
-                                    <NextLink href="/works" passHref>
+                                    <NextLink href="#projects-section" passHref>
                                         <MenuItem as={Link}>projects</MenuItem>
                                     </NextLink>
-                                    <NextLink href="/posts" passHref>
+                                    <NextLink href="#about-section" passHref>
                                         <MenuItem as={Link}>about</MenuItem>
                                     </NextLink>
-                                    <NextLink href="/posts" passHref>
+
+                                    <NextLink href="/Joshua-Chu.pdf" passHref>
                                         <MenuItem as={Link} color="brand.500">
                                             resume
                                         </MenuItem>
