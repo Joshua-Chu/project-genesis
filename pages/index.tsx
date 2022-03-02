@@ -11,6 +11,7 @@ import {
 import styled from "@emotion/styled";
 import Image from "next/image";
 import NextLink from "next/link";
+import Hero from "../component/Hero/Hero";
 import Section from "../component/Section/Section";
 
 interface ContactFlexProps {
@@ -44,6 +45,10 @@ const ContactFlex = styled<ContactFlexProps & typeof Flex>(Flex)`
         color: white;
     }
 
+    &:hover a {
+        text-decoration: underline;
+    }
+
     * {
         z-index: 50;
     }
@@ -54,65 +59,7 @@ function Home() {
     return (
         <>
             <Flex alignItems="center" direction="column">
-                <Section>
-                    <Flex justifyContent="center">
-                        <Image
-                            src="/hero.png"
-                            alt="profile"
-                            width={180}
-                            height={250}
-                            className="hero-image"
-                        />
-                    </Flex>
-
-                    <Flex
-                        mt="32px"
-                        direction="column"
-                        textAlign="center"
-                        gap="16px"
-                    >
-                        <Heading
-                            as="h2"
-                            fontSize={["1.8rem", "md"]}
-                            color={
-                                colorMode === "light" ? "brand.300" : "white"
-                            }
-                        >
-                            Hi, I&apos;m Josh —
-                        </Heading>
-                        <Heading
-                            as="h2"
-                            fontSize={["2.5rem", "lg"]}
-                            color="brand.500"
-                        >
-                            your front-end <br /> developer.
-                        </Heading>
-
-                        <Text
-                            as="p"
-                            fontSize={[".8rem", "sm"]}
-                            color={
-                                colorMode === "light" ? "brand.200" : "white"
-                            }
-                        >
-                            I love to work on accessible products with people
-                            <br />
-                            that champion the same ideas that I hold.
-                        </Text>
-
-                        <Flex gap="48px" justifyContent="center" mt="16px">
-                            <NextLink href="/" passHref>
-                                <Link>projects</Link>
-                            </NextLink>
-
-                            <NextLink href="/" passHref>
-                                <Link color="brand.500" fontWeight="bold">
-                                    resume
-                                </Link>
-                            </NextLink>
-                        </Flex>
-                    </Flex>
-                </Section>
+                <Hero colorMode={colorMode} />
             </Flex>
 
             <div className="spacer wave-1">
