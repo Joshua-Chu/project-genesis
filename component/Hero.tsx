@@ -1,7 +1,7 @@
 import { Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
-import Section from "../Section/Section";
+import Section from "./Section";
 
 type HeroProps = {
     colorMode: string;

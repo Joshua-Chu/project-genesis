@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 type LayoutProps = {
     children: React.ReactNode;

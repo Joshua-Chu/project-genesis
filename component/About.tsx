@@ -1,5 +1,5 @@
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
-import Section from "../Section/Section";
+import Section from "./Section";
 
 const About = () => {
     return (

@@ -13,8 +13,8 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
-import Logo from "../Logo/Logo";
-import Section from "../Section/Section";
+import Logo from "./Logo";
+import Section from "./Section";
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
