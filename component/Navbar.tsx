@@ -10,9 +10,11 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
+    Text,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
+import LinkItem from "./LinkItem";
 import Logo from "./Logo";
 import Section from "./Section";
 
@@ -63,21 +65,18 @@ const Navbar = () => {
                             pr="32px"
                             display={{ base: "none", md: "flex" }}
                         >
-                            <NextLink href="/" passHref>
-                                <Link>blogs</Link>
-                            </NextLink>
-
-                            <NextLink href="/" passHref>
-                                <Link>projects</Link>
-                            </NextLink>
-
-                            <NextLink href="/" passHref>
-                                <Link>about</Link>
-                            </NextLink>
-
-                            <NextLink href="/" passHref>
-                                <Link color="brand.500">resume</Link>
-                            </NextLink>
+                            <LinkItem type="secondary" href="/blogs">
+                                blogs
+                            </LinkItem>
+                            <LinkItem type="secondary" href="/projects">
+                                projects
+                            </LinkItem>
+                            <LinkItem type="secondary" href="/about">
+                                about
+                            </LinkItem>
+                            <LinkItem type="primary" href="/about">
+                                <Text color="brand.500">resume</Text>
+                            </LinkItem>
                         </Stack>
                         <IconButton
                             aria-label="Toggle theme"

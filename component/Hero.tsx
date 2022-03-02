@@ -1,6 +1,6 @@
-import { Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import NextLink from "next/link";
+import LinkItem from "./LinkItem";
 import Section from "./Section";
 
 type HeroProps = {
@@ -43,15 +43,15 @@ const Hero = ({ colorMode }: HeroProps) => {
                 </Text>
 
                 <Flex gap="48px" justifyContent="center" mt="16px">
-                    <NextLink href="/" passHref>
-                        <Link>projects</Link>
-                    </NextLink>
+                    <LinkItem type="secondary" href="/projects">
+                        projects
+                    </LinkItem>
 
-                    <NextLink href="/" passHref>
-                        <Link color="brand.500" fontWeight="bold">
+                    <LinkItem type="primary" href="/about">
+                        <Text color="brand.500" fontWeight="bold">
                             resume
-                        </Link>
-                    </NextLink>
+                        </Text>
+                    </LinkItem>
                 </Flex>
             </Flex>
         </Section>
