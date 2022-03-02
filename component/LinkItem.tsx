@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 import React from "react";
 
 interface StyledLinkProps {
-    islightmode?: "light" | "dark";
-    isPrimary?: boolean;
+    colormode?: "light" | "dark";
+    type?: "primary" | "secondary";
 }
 
 const StyledLinks = styled<StyledLinkProps & typeof Link>(Link)`
@@ -21,12 +21,12 @@ const StyledLinks = styled<StyledLinkProps & typeof Link>(Link)`
         width: 100%;
         height: 3px;
         border-radius: 4px;
-        background: ${({ islightmode, isPrimary }) =>
-            islightmode === "light"
-                ? isPrimary
+        background: ${({ colormode, type }) =>
+            colormode === "light"
+                ? type
                     ? "#5e81ac"
                     : "#2e3440"
-                : isPrimary
+                : type
                 ? "#5e81ac"
                 : "white"};
         bottom: -5px;
@@ -53,7 +53,7 @@ const LinkItem = ({ href, children, type }: LinkItemProps) => {
 
     return (
         <NextLink href={href} passHref>
-            <StyledLinks islightmode={colorMode} isPrimary={type === "primary"}>
+            <StyledLinks colormode={colorMode} type={type}>
                 {children}
             </StyledLinks>
         </NextLink>

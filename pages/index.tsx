@@ -1,12 +1,27 @@
 import { Box, Flex, Heading, useColorMode } from "@chakra-ui/react";
+// import { GetServerSideProps } from "next";
 import Image from "next/image";
 import About from "../component/About";
 import Contact from "../component/Contact";
 import Hero from "../component/Hero";
 import Section from "../component/Section";
+// import { getAllPosts, getSinglePost } from "../lib/notion/notion";
+
+// export const getServerSideProps: GetServerSideProps = async () => {
+//     // const result = await getAllPosts();
+//     const { post, markdown } = await getSinglePost("hello-world-1");
+//     return {
+//         props: {
+//             // data: result,
+//             post,
+//             markdown,
+//         },
+//     };
+// };
 
 function Home() {
     const { colorMode } = useColorMode();
+
     return (
         <>
             <Flex alignItems="center" direction="column">
