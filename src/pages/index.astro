@@ -1,28 +1,14 @@
 ---
-import "~/styles/styles.scss";
+import BaseLayout from "@/layouts/Base.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <main class="wrapper">
-      <section>
-        <h1>im josh</h1>
-        <h2>im josh</h2>
-        <p>
-          i'm passionate about the intersection where technology and
-          entrepreneurship meet. I thrive on working with startups or even jump
-          start my own ventures, driven by a single mission: leveraging the
-          power of technology to spark a positive change in society. If we’re on
-          the same boat, hit me up.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+<BaseLayout>
+  <h1>im josh</h1>
+  <h2>im josh</h2>
+  <p>
+    i'm passionate about the intersection where technology and entrepreneurship
+    meet. I thrive on working with startups or even jump start my own ventures,
+    driven by a single mission: leveraging the power of technology to spark a
+    positive change in society. If we’re on the same boat, hit me up.
+  </p>
+</BaseLayout>

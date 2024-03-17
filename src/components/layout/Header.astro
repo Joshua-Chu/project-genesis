@@ -1,0 +1,40 @@
+---
+const pathName = Astro.url.pathname;
+---
+
+<header class="header">
+  <nav class="nav">
+    <ul class="nav__links">
+      <li class:list={["nav__link", { active: pathName === "/" }]}>
+        <a href="/" data-astro-prefetch>home</a>
+      </li>
+      <li class:list={["nav__link", { active: pathName === "/articles" }]}>
+        <a href="/articles" data-astro-prefetch>articles</a>
+      </li>
+      <li class:list={["nav__link", { active: pathName === "/work" }]}>
+        <a href="/work" data-astro-prefetch>work</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  @import "@/styles/styles.scss";
+  .header {
+    margin-bottom: 64px;
+  }
+  .nav {
+    &__links {
+      display: flex;
+      gap: 16px;
+    }
+
+    &__link:hover {
+      color: var(--color-yellow);
+    }
+
+    &__link.active {
+      color: var(--color-yellow);
+    }
+  }
+</style>

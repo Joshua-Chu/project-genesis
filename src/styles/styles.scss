@@ -1,33 +1,6 @@
-@use "sass:math";
+@use "utils" as u;
+@use "variables";
 @import "@fontsource/geist-sans";
-
-@function rem($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.';
-  }
-}
-
-@function em($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + em;
-  } @else {
-    @error 'Don\'t use units when using the em() function; only numbers.';
-  }
-}
-
-:root {
-  --bg-gray: #121212;
-  --color-gray: #a4a4a4;
-  --color-yellow: #fef08a;
-  --font-xl: #{rem(32)};
-  --font-lg: #{rem(24)};
-  --font-md: #{rem(20)};
-  --font-body: #{rem(16)};
-
-  --container-size: #{em(672)};
-}
 
 html {
   font-size: 100%;
@@ -42,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  margin-inline: rem(16);
+  margin-inline: u.rem(16);
   max-width: var(--container-size);
   min-height: 100vh;
   background-color: var(--bg-gray);
@@ -50,9 +23,9 @@ body {
   font-size: var(--font-body);
   color: var(--color-gray);
 
-  @media (width > em(672)) {
+  @media (width > u.em(672)) {
     & {
-      margin-block: rem(64);
+      margin-block: u.rem(64);
       margin-inline: auto;
     }
   }
@@ -80,6 +53,11 @@ h2 {
   text-decoration: underline;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 img {
   display: block;
   width: 100%;
@@ -95,8 +73,8 @@ li {
 }
 
 .wrapper {
-  padding-inline: rem(8);
-  @media (width > em(672)) {
+  padding-inline: u.rem(8);
+  @media (width > u.em(672)) {
     padding-inline: 0;
   }
 }

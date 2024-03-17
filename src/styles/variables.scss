@@ -1,0 +1,13 @@
+@use "utils" as u;
+
+:root {
+  --bg-gray: #121212;
+  --color-gray: #a4a4a4;
+  --color-yellow: #fef08a;
+  --font-xl: #{u.rem(32)};
+  --font-lg: #{u.rem(24)};
+  --font-md: #{u.rem(20)};
+  --font-body: #{u.rem(16)};
+
+  --container-size: #{u.em(672)};
+}
