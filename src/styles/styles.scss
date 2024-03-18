@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin-block: u.rem(64);
   margin-inline: u.rem(16);
   max-width: var(--container-size);
   min-height: 100vh;
@@ -25,7 +25,6 @@ body {
 
   @media (width > u.em(672)) {
     & {
-      margin-block: u.rem(64);
       margin-inline: auto;
     }
   }

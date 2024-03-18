@@ -1,14 +1,101 @@
 ---
+import FunArrowImg from "@/assets/fun-arrow.svg";
+import HeroImg from "@/assets/hero.jpg";
 import BaseLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
-  <h1>im josh</h1>
-  <h2>im josh</h2>
-  <p>
-    i'm passionate about the intersection where technology and entrepreneurship
-    meet. I thrive on working with startups or even jump start my own ventures,
-    driven by a single mission: leveraging the power of technology to spark a
-    positive change in society. If we’re on the same boat, hit me up.
-  </p>
+  <section>
+    <div class="hero">
+      <div class="hero__image-container">
+        <Image
+          alt="A picture of Joshua Chu in front of his work station."
+          fetchpriority="high"
+          loading="eager"
+          src={HeroImg}
+          class="hero__image"
+        />
+      </div>
+      <h1 class="hero__heading">i'm josh</h1>
+      <Image
+        alt="A funny arrow"
+        fetchpriority="high"
+        loading="eager"
+        src={FunArrowImg}
+        class="hero__funny-arrow"
+      />
+    </div>
+    <p class="description">
+      i'm passionate about the intersection where technology and
+      entrepreneurship meet. I thrive on working with startups or even jump
+      start my own ventures, driven by a single mission: leveraging the power of
+      technology to spark a positive change in society. If we’re on the same
+      boat, <a
+        href="https://www.linkedin.com/in/joshuachudev/"
+        target="_blank"
+        referrerpolicy="no-referrer"
+        class="description__cta">hit me up</a
+      >.
+    </p>
+  </section>
 </BaseLayout>
+
+<style lang="scss">
+  @use "@/styles/utils" as u;
+  @import "@/styles/styles.scss";
+
+  .hero {
+    position: relative;
+    margin-bottom: 32px;
+    &__image-container {
+      height: 300px;
+    }
+
+    &__image {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__heading {
+      font-weight: bold;
+      font-size: var(--font-xl);
+      color: var(--color-yellow);
+      text-align: center;
+      margin-block: 24px;
+    }
+
+    &__funny-arrow {
+      width: u.rem(100);
+      height: auto;
+
+      position: absolute;
+      bottom: 16px;
+      right: 0%;
+
+      @media (width > u.rem(460)) {
+        width: u.rem(150);
+      }
+
+      @media (width > u.rem(500)) {
+        width: u.rem(170);
+      }
+
+      @media (width > u.rem(640)) {
+        right: 12%;
+      }
+      // 640 - 0%
+      // 500 - 150
+      // 460 - 100
+    }
+  }
+
+  .description {
+    line-height: 1.5;
+
+    &__cta {
+      font-weight: bold;
+      color: var(--color-yellow);
+    }
+  }
+</style>
