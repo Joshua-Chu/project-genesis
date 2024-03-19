@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/Base.astro";
+import { getAllArticles } from "@/utils/data";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allArticles = await getAllArticles();
+
+  return paginate(allArticles, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<CollectionEntry<"article">>;
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout> Hello World </BaseLayout>
+
+<script define:vars={{ page }}>
+  console.log(page);
+</script>

@@ -1,0 +1,20 @@
+---
+import ArticleLayout from "@/layouts/ArticleLayout.astro";
+import { getAllArticles } from "@/utils/data";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+
+export const getStaticPaths = (async () => {
+  const articles = await getAllArticles();
+  return articles.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ArticleLayout> <Content /> </ArticleLayout>

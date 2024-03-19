@@ -1,0 +1,36 @@
+---
+import CofeeImg from "@/assets/coffee.svg";
+import HeartImg from "@/assets/heart.svg";
+import { Image } from "astro:assets";
+---
+
+<footer>
+  <p class="footer">
+    made with
+    <Image src={HeartImg} alt="love" class="footer__heart" />
+    and
+    <Image src={CofeeImg} alt="coffee" class="footer__coffee" />
+  </p>
+</footer>
+
+<style lang="scss">
+  .footer {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    &__heart {
+      width: 18px;
+      margin-inline: 4px;
+    }
+
+    &__coffee {
+      width: 28px;
+      margin-inline: 4px;
+    }
+  }
+</style>
