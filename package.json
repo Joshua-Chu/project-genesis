@@ -13,6 +13,11 @@
     "@astrojs/check": "^0.5.9",
     "@fontsource/geist-sans": "^5.0.2",
     "astro": "^4.5.5",
+    "astro-expressive-code": "^0.33.5",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0",
+    "rehype-external-links": "^3.0.0",
+    "remark-unwrap-images": "^4.0.0",
     "sass": "^1.72.0",
     "typescript": "^5.4.2"
   },

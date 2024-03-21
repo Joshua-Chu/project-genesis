@@ -8,10 +8,12 @@ const pathName = Astro.url.pathname;
       <li class:list={["nav__link", { active: pathName === "/" }]}>
         <a href="/" data-astro-prefetch>home</a>
       </li>
-      <li class:list={["nav__link", { active: pathName === "/articles" }]}>
+      <li
+        class:list={["nav__link", { active: pathName.includes("/articles") }]}
+      >
         <a href="/articles" data-astro-prefetch>articles</a>
       </li>
-      <li class:list={["nav__link", { active: pathName === "/work" }]}>
+      <li class:list={["nav__link", { active: pathName.includes("/work") }]}>
         <a href="/work" data-astro-prefetch>work</a>
       </li>
     </ul>

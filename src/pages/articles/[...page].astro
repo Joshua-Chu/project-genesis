@@ -1,4 +1,5 @@
 ---
+import ArticlePreview from "@/components/article/ArticlePreview.astro";
 import BaseLayout from "@/layouts/Base.astro";
 import { getAllArticles } from "@/utils/data";
 import type { GetStaticPaths, Page } from "astro";
@@ -17,8 +18,17 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<BaseLayout> Hello World </BaseLayout>
+<BaseLayout>
+  <h1>Articles</h1>
+  {page.data.map((d) => <ArticlePreview article={d} />)}
+</BaseLayout>
 
-<script define:vars={{ page }}>
-  console.log(page);
-</script>
+<style lang="scss">
+  @import "@/styles/variables.scss";
+
+  h1 {
+    font-size: var(--font-xl);
+    color: var(--color-yellow);
+    margin-bottom: 28px;
+  }
+</style>

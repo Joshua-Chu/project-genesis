@@ -1,0 +1,60 @@
+---
+import { getFormattedDate } from "@/utils/date";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  article: CollectionEntry<"article">;
+}
+
+const { article } = Astro.props;
+const {
+  data: { title, publishDate, description },
+  slug,
+} = article;
+
+const postDate = getFormattedDate(publishDate);
+---
+
+<a href={`/articles/${slug}`} class="preview">
+  <div class="preview__heading">
+    <time class="preview__date">
+      {postDate}
+    </time>
+
+    <h2 class="preview__title">{title}</h2>
+  </div>
+  <p class="preview__description">"{description}"</p>
+</a>
+
+<style lang="scss">
+  @import "@/styles/variables.scss";
+
+  .preview {
+    display: block;
+    margin-bottom: 20px;
+    padding: 16px;
+
+    &__heading {
+      display: flex;
+      align-items: end;
+      margin-bottom: 8px;
+    }
+
+    &__date {
+      margin-right: 16px;
+    }
+
+    &__title {
+      font-size: var(--font-md);
+      transition: all 100ms ease-in;
+
+      .preview:hover & {
+        color: var(--color-yellow);
+      }
+    }
+
+    &__description {
+      font-size: var(--font-md);
+    }
+  }
+</style>

@@ -1,9 +1,33 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./Base.astro";
+
+interface Props {
+  article: CollectionEntry<"article">;
+}
+
+const { article } = Astro.props;
+const {
+  data: { description, ogImage, publishDate, title, updatedDate },
+  slug,
+} = article;
 ---
 
 <BaseLayout>
-  <article>
+  <article id="article">
     <slot />
   </article>
 </BaseLayout>
+
+<style lang="scss" is:global>
+  h1 {
+    text-align: center;
+  }
+  #article {
+    img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+  }
+</style>
