@@ -1,13 +1,21 @@
 ---
 import FunArrowImg from "@/assets/fun-arrow.svg";
 import HeroImg from "@/assets/hero.jpg";
+import ArticlePreview from "@/components/article/ArticlePreview.astro";
 import BaseLayout from "@/layouts/Base.astro";
+import { getAllArticles, sortMDByDate } from "@/utils/data";
 import { Image } from "astro:assets";
+
+const MAX_POSTS = 5;
+const allArticles = await getAllArticles();
+const latestArticles = sortMDByDate(allArticles).slice(0, MAX_POSTS);
+
+console.log(latestArticles);
 ---
 
 <BaseLayout>
-  <section>
-    <div class="hero">
+  <section class="hero">
+    <div class="hero__heading-container">
       <div class="hero__image-container">
         <Image
           alt="A picture of Joshua Chu in front of his work station."
@@ -26,7 +34,7 @@ import { Image } from "astro:assets";
         class="hero__funny-arrow"
       />
     </div>
-    <p class="description">
+    <p class="hero__description">
       i'm passionate about the intersection where technology and
       entrepreneurship meet. I thrive on working with startups or even jump
       start my own ventures, driven by a single mission: leveraging the power of
@@ -39,6 +47,10 @@ import { Image } from "astro:assets";
       >.
     </p>
   </section>
+  <section class="latest">
+    <h2 class="latest__heading">latest Articles:</h2>
+    {latestArticles.map((d) => <ArticlePreview article={d} isLatest />)}
+  </section>
 </BaseLayout>
 
 <style lang="scss">
@@ -46,8 +58,12 @@ import { Image } from "astro:assets";
   @import "@/styles/styles.scss";
 
   .hero {
-    position: relative;
-    margin-bottom: 32px;
+    margin-bottom: 69px;
+
+    &__heading-container {
+      position: relative;
+      margin-bottom: 32px;
+    }
     &__image-container {
       height: 300px;
     }
@@ -85,14 +101,22 @@ import { Image } from "astro:assets";
         right: 12%;
       }
     }
+
+    &__.description {
+      line-height: 1.5;
+
+      &__cta {
+        font-weight: bold;
+        color: var(--color-yellow);
+      }
+    }
   }
 
-  .description {
-    line-height: 1.5;
-
-    &__cta {
-      font-weight: bold;
-      color: var(--color-yellow);
+  .latest {
+    margin-bottom: 64px;
+    &__heading {
+      text-decoration-color: var(--color-yellow);
+      margin-bottom: 28px;
     }
   }
 </style>

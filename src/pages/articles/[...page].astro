@@ -1,5 +1,6 @@
 ---
 import ArticlePreview from "@/components/article/ArticlePreview.astro";
+import Paginator from "@/components/Paginator.astro";
 import BaseLayout from "@/layouts/Base.astro";
 import { getAllArticles } from "@/utils/data";
 import type { GetStaticPaths, Page } from "astro";
@@ -8,7 +9,7 @@ import type { CollectionEntry } from "astro:content";
 export const getStaticPaths = (async ({ paginate }) => {
   const allArticles = await getAllArticles();
 
-  return paginate(allArticles, { pageSize: 10 });
+  return paginate(allArticles, { pageSize: 5 });
 }) satisfies GetStaticPaths;
 
 interface Props {
@@ -16,11 +17,27 @@ interface Props {
 }
 
 const { page } = Astro.props;
+
+const paginationProps = {
+  ...(page.url.prev && {
+    prevUrl: {
+      text: `← Previous Article`,
+      url: page.url.prev,
+    },
+  }),
+  ...(page.url.next && {
+    nextUrl: {
+      text: `Next Article →`,
+      url: page.url.next,
+    },
+  }),
+};
 ---
 
 <BaseLayout>
   <h1>Articles</h1>
   {page.data.map((d) => <ArticlePreview article={d} />)}
+  <Paginator {...paginationProps} />
 </BaseLayout>
 
 <style lang="scss">
