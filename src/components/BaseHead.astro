@@ -1,8 +1,30 @@
+---
+import { siteConfig } from "@/site-config";
+import "@/styles/styles.scss";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string | undefined;
+  articleDate?: string | undefined;
+}
+const { articleDate, description, ogImage, title } = Astro.props;
+const siteTitle = `${title} • ${siteConfig.title}`;
+console.log(Astro.url.pathname, Astro.site);
+---
+
 <meta charset="utf-8" />
 <meta
   content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
   name="viewport"
 />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-<title>Joshua Chu</title>
+<title>{siteTitle}</title>
+
+<!-- Icons -->
 <link href="/favicon.ico" rel="icon" sizes="any" />
+
+{/* Primary Meta Tags */}
+<meta content={siteTitle} name="title" />
+<meta content={description} name="description" />
+<meta content={siteConfig.author} name="author" />

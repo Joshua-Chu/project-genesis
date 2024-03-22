@@ -2,13 +2,30 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
+import { siteConfig } from "@/site-config";
 
-import "@/styles/styles.scss";
+interface Props {
+  meta: {
+    title: string;
+    description?: string;
+    ogImage?: string | undefined;
+    articleDate?: string | undefined;
+  };
+}
+
+const {
+  meta: { articleDate, description = siteConfig.description, ogImage, title },
+} = Astro.props;
 ---
 
 <html>
   <head>
-    <BaseHead />
+    <BaseHead
+      articleDate={articleDate}
+      description={description}
+      ogImage={ogImage}
+      title={title}
+    />
   </head>
   <body>
     <Header />

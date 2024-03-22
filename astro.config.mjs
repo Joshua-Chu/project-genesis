@@ -6,6 +6,7 @@ import { expressiveCodeOptions } from "./src/site.config";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
 // https://astro.build/config
 export default defineConfig({
+  site: "https://www.imjosh.tech/",
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
     rehypePlugins: [

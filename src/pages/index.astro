@@ -9,11 +9,11 @@ import { Image } from "astro:assets";
 const MAX_POSTS = 5;
 const allArticles = await getAllArticles();
 const latestArticles = sortMDByDate(allArticles).slice(0, MAX_POSTS);
-
-console.log(latestArticles);
 ---
 
-<BaseLayout>
+<BaseLayout
+  meta={{ title: "Home", articleDate: "", description: "", ogImage: "" }}
+>
   <section class="hero">
     <div class="hero__heading-container">
       <div class="hero__image-container">
