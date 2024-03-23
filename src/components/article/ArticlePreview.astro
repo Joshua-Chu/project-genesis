@@ -53,11 +53,15 @@ const postDate = getFormattedDate(publishDate);
 
     &__date {
       margin-right: 16px;
+      min-width: fit-content;
     }
 
     &__title {
       font-size: var(--font-lg);
       transition: all 100ms ease-in;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       .preview:hover & {
         color: var(--color-yellow);

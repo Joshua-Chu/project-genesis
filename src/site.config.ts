@@ -22,7 +22,7 @@ export const siteConfig = {
 };
 
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
-  // One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
+  // One dark, one light theme => https://expressive-comin-lighte.com/guides/themes/#available-themes
   themes: ["dracula"],
   useThemedScrollbars: false,
   styleOverrides: {

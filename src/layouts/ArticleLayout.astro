@@ -36,11 +36,10 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 
     h2,
     h3 {
-      margin-block-start: 28px;
-      margin-block-end: 20px;
+      margin-block: 32px;
     }
     p {
-      margin-block-end: 16px;
+      margin-block-end: 32px;
     }
 
     blockquote {
@@ -56,6 +55,22 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 
     strong {
       color: white;
+    }
+
+    .expressive-code {
+      margin-block: 32px;
+    }
+    code:not(pre > code) {
+      display: inline-block;
+      background-color: var(--color-gray);
+      color: var(--bg-gray);
+      line-height: 1.2;
+      font-size: 16px;
+      letter-spacing: -1px;
+      border-radius: var(--radius);
+      max-width: 100%;
+      font-size: 80%;
+      padding: 0.1em 0.25em;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 title: "realizations of a dropout."
-description: "This post is for testing and listing a number of different markdown elements"
+description: "This article is about my realizations during and after dropping out from university."
 publishDate: "10 Apr 2022"
 updatedDate: 23 Mar 2024
 tags: ["rant", "education", "life"]
