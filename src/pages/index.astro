@@ -11,9 +11,7 @@ const allArticles = await getAllArticles();
 const latestArticles = sortMDByDate(allArticles).slice(0, MAX_POSTS);
 ---
 
-<BaseLayout
-  meta={{ title: "Home", articleDate: "", description: "", ogImage: "" }}
->
+<BaseLayout meta={{ title: "Home" }}>
   <section class="hero">
     <div class="hero__heading-container">
       <div class="hero__image-container">
