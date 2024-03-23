@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/Base.astro";
+import { getAllArticles, getUniqueTagsWithCount } from "@/utils/data";
+
+const allArticles = await getAllArticles();
+const allTags = getUniqueTagsWithCount(allArticles);
+---
+
+<!-- TODO: META TAGS -->
+<BaseLayout meta={{ title: "tags" }}>
+  <h1>All Tags With Possts</h1>
+
+  <div>
+    {
+      allTags.map(([tag, count]) => (
+        <div>
+          <span>
+            <a href={`/tags/${tag}`}>#{tag}</a>
+          </span>
+          - {count} {count > 1 ? "articles" : "article"}
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

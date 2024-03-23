@@ -8,7 +8,7 @@ interface Props {
 
 const { article } = Astro.props;
 const {
-  data: { title, publishDate, updatedDate },
+  data: { title, publishDate, updatedDate, tags },
   render,
 } = article;
 const { remarkPluginFrontmatter } = await render();
@@ -20,19 +20,32 @@ const updatedDateFormatted = getFormattedDate(updatedDate || publishDate);
   <h1 class="header__title">
     {title}
   </h1>
-  <di class="header__meta-container">
+  <div class="header__meta-container">
     <p class="header__meta-publish">{publishedDateFormatted}</p>
     <p class="header__meta-separator">/</p>
     <p class="header__meta-minutes">{remarkPluginFrontmatter.minutesRead}</p>
     <p class="header__meta-updated">Last Updated: {updatedDateFormatted}</p>
-  </di>
+  </div>
+  <div class="header__tags">
+    {
+      tags.map((tag) => (
+        <a
+          href={`/tags/${tag}`}
+          class="header__tag"
+          aria-label={`View more articles with the tag ${tag}`}
+        >
+          #{tag}
+        </a>
+      ))
+    }
+  </div>
 </div>
 
 <style lang="scss">
   @import "@/styles/variables.scss";
 
   .header {
-    margin-bottom: 60px;
+    margin-block-end: 60px;
     &__title {
       font-size: var(--font-xl);
       margin-block-end: 4px;
@@ -41,8 +54,8 @@ const updatedDateFormatted = getFormattedDate(updatedDate || publishDate);
     &__meta-container {
       display: flex;
       align-items: center;
-      padding-inline: 16px;
       font-size: var(--font-xs);
+      margin-block-end: 4px;
     }
 
     &__meta-separator {
@@ -59,6 +72,17 @@ const updatedDateFormatted = getFormattedDate(updatedDate || publishDate);
       padding-inline: 6px;
       padding-block: 2px;
       border-radius: 8px;
+    }
+
+    &__tags {
+      display: flex;
+      align-items: center;
+    }
+
+    &__tag {
+      text-decoration: underline;
+      text-decoration-color: var(--color-yellow);
+      margin-inline-end: 8px;
     }
   }
 </style>

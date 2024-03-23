@@ -13,8 +13,11 @@ const pathName = Astro.url.pathname;
       >
         <a href="/articles" data-astro-prefetch>articles</a>
       </li>
+      <li class:list={["nav__link", { active: pathName.includes("/tags") }]}>
+        <a href="/tags" data-astro-prefetch>tags</a>
+      </li>
       <li class:list={["nav__link", { active: pathName.includes("/work") }]}>
-        <a href="/public/joshua_chu_resume.pdf" target="_blank">work</a>
+        <a href="/joshua_chu_resume.pdf" target="_blank">work</a>
       </li>
     </ul>
   </nav>

@@ -1,0 +1,62 @@
+---
+import Paginator from "@/components/Paginator.astro";
+import ArticlePreview from "@/components/article/ArticlePreview.astro";
+import BaseLayout from "@/layouts/Base.astro";
+import { getAllArticles, getUniqueTags, sortMDByDate } from "@/utils/data";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const allArticles = await getAllArticles();
+  const allArticlesByDate = sortMDByDate(allArticles);
+  const uniqueTags = getUniqueTags(allArticlesByDate);
+
+  return uniqueTags.flatMap((tag) => {
+    const filterPosts = allArticlesByDate.filter((post) =>
+      post.data.tags.includes(tag),
+    );
+    return paginate(filterPosts, {
+      pageSize: 5,
+      params: { tag },
+    });
+  });
+};
+
+interface Props {
+  page: Page<CollectionEntry<"article">>;
+}
+
+const { page } = Astro.props;
+
+const paginationProps = {
+  ...(page.url.prev && {
+    prevUrl: {
+      text: `← Previous Article`,
+      url: page.url.prev,
+    },
+  }),
+  ...(page.url.next && {
+    nextUrl: {
+      text: `Next Article →`,
+      url: page.url.next,
+    },
+  }),
+};
+---
+
+<BaseLayout meta={{ title: "taggg" }}>
+  <h1>Articles with Tags</h1>
+
+  {page.data.map((d) => <ArticlePreview article={d} />)}
+  <Paginator {...paginationProps} />
+</BaseLayout>
+
+<style lang="scss">
+  @import "@/styles/variables.scss";
+
+  h1 {
+    font-size: var(--font-xl);
+    color: var(--color-yellow);
+    margin-bottom: 28px;
+  }
+</style>
