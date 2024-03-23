@@ -42,6 +42,13 @@ const postDate = getFormattedDate(publishDate);
       display: flex;
       align-items: end;
       margin-bottom: 8px;
+
+      @media (width < 500px) {
+        margin-bottom: 8px;
+        flex-direction: column;
+        gap: 4px;
+        align-items: unset;
+      }
     }
 
     &__date {
@@ -49,7 +56,7 @@ const postDate = getFormattedDate(publishDate);
     }
 
     &__title {
-      font-size: var(--font-md);
+      font-size: var(--font-lg);
       transition: all 100ms ease-in;
 
       .preview:hover & {
