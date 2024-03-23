@@ -17,11 +17,13 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 ---
 
 <BaseLayout meta={{ articleDate, description, title, ogImage: socialImage }}>
-  <article id="article">
+  <article>
     <div>
       <AstroHeader article={article} />
     </div>
-    <slot />
+    <div id="article">
+      <slot />
+    </div>
   </article>
 </BaseLayout>
 
