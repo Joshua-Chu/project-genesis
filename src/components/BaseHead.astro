@@ -10,6 +10,10 @@ interface Props {
 }
 const { articleDate, description, ogImage, title } = Astro.props;
 const siteTitle = `${title} • ${siteConfig.title}`;
+const socialImageURL = new URL(
+  ogImage ? ogImage : "/social-card.png",
+  Astro.url,
+).href;
 ---
 
 <meta charset="utf-8" />
@@ -27,3 +31,27 @@ const siteTitle = `${title} • ${siteConfig.title}`;
 <meta content={siteTitle} name="title" />
 <meta content={description} name="description" />
 <meta content={siteConfig.author} name="author" />
+
+{/* Open Graph / Facebook */}
+<meta content={articleDate ? "article" : "website"} property="og:type" />
+<meta content={title} property="og:title" />
+<meta content={description} property="og:description" />
+<meta content={siteConfig.title} property="og:site_name" />
+<meta content={siteConfig.ogLocale} property="og:locale" />
+<meta content={socialImageURL} property="og:image" />
+<meta content="1200" property="og:image:width" />
+<meta content="630" property="og:image:height" />
+{
+  articleDate && (
+    <>
+      <meta content={siteConfig.author} property="article:author" />
+      <meta content={articleDate} property="article:published_time" />
+    </>
+  )
+}
+
+{/* Twitter */}
+<meta content="summary_large_image" property="twitter:card" />
+<meta content={title} property="twitter:title" />
+<meta content={description} property="twitter:description" />
+<meta content={socialImageURL} property="twitter:image" />

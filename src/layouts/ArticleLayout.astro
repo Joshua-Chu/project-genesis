@@ -12,10 +12,11 @@ const {
   data: { description, ogImage, publishDate, title, updatedDate },
   slug,
 } = article;
+const socialImage = `/og-image/${slug}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 ---
 
-<BaseLayout meta={{ articleDate, description, title }}>
+<BaseLayout meta={{ articleDate, description, title, ogImage: socialImage }}>
   <article id="article">
     <div>
       <AstroHeader article={article} />

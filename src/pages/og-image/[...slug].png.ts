@@ -3,11 +3,10 @@ import GeistSansBold from "@/assets/geist-sans-latin-700-normal.ttf";
 import { siteConfig } from "@/site-config";
 import { getAllArticles } from "@/utils/data";
 import { getFormattedDate } from "@/utils/date";
+import { Resvg } from "@resvg/resvg-js";
 import type { APIContext, InferGetStaticPropsType } from "astro";
-import { readFile } from "node:fs/promises";
 import satori, { type SatoriOptions } from "satori";
 import { html } from "satori-html";
-import sharp from "sharp";
 
 const markup = (title: string, pubDate: string) =>
   html`<div
@@ -36,7 +35,7 @@ const markup = (title: string, pubDate: string) =>
           id="Layer_1"
           viewBox="0 0 376.277 376.277"
           xml:space="preserve"
-          height="60"
+          height="36"
           fill="#000000"
         >
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -94,43 +93,31 @@ const markup = (title: string, pubDate: string) =>
     </div>
   </div>`;
 
-const generateOgImage = async (text: string, date: string): Promise<Buffer> => {
-  const options: SatoriOptions = {
-    width: 1200,
-    height: 630,
-    fonts: [
-      {
-        name: "Roboto Mono",
-        data: await readFile(GeistSans),
-        weight: 400,
-        style: "normal",
-      },
-      {
-        name: "Roboto Mono",
-        data: await readFile(GeistSansBold),
-        weight: 700,
-        style: "normal",
-      },
-    ],
-  };
-
-  const svg = await satori(markup(text, date), options);
-
-  const sharpSvg = Buffer.from(svg);
-
-  const buffer = await sharp(sharpSvg).toBuffer();
-
-  return buffer;
+const options: SatoriOptions = {
+  width: 1200,
+  height: 630,
+  fonts: [
+    {
+      name: "Roboto Mono",
+      data: Buffer.from(GeistSans),
+      weight: 400,
+      style: "normal",
+    },
+    {
+      name: "Roboto Mono",
+      data: Buffer.from(GeistSansBold),
+      weight: 700,
+      style: "normal",
+    },
+  ],
 };
-
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 export async function GET(context: APIContext) {
   const { title, pubDate } = context.props as Props;
-
   const articleDate = getFormattedDate(pubDate);
 
-  const png = await generateOgImage(title, articleDate);
+  const svg = await satori(markup(title, articleDate), options);
+  const png = new Resvg(svg).render().asPng();
   return new Response(png, {
     headers: {
       "Content-Type": "image/png",
@@ -138,6 +125,8 @@ export async function GET(context: APIContext) {
     },
   });
 }
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 export async function getStaticPaths() {
   const articles = await getAllArticles();

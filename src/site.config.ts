@@ -10,6 +10,7 @@ export const siteConfig = {
     "Joshua's personal brain dump garden. A safe space to express and offer a different perspective about life and programming.",
   // HTML lang property, found in src/layouts/Base.astro L:18
   lang: "en-GB",
+  ogLocale: "en_GB",
   date: {
     locale: "en-GB",
     options: {

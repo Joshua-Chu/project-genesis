@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.9",
     "@fontsource/geist-sans": "^5.0.2",
+    "@resvg/resvg-js": "^2.6.0",
     "astro": "^4.5.5",
     "astro-expressive-code": "^0.33.5",
     "mdast-util-to-string": "^4.0.0",
@@ -26,7 +27,6 @@
     "@types/node": "^20.11.30",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "satori": "^0.10.13",
-    "sharp": "^0.33.2"
+    "satori": "^0.10.13"
   }
 }
