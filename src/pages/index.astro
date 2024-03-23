@@ -48,7 +48,7 @@ const latestArticles = sortMDByDate(allArticles).slice(0, MAX_POSTS);
     </p>
   </section>
   <section class="latest">
-    <h2 class="latest__heading">latest Articles:</h2>
+    <h2 class="latest__heading">latest articles:</h2>
     {latestArticles.map((d) => <ArticlePreview article={d} isLatest />)}
   </section>
 </BaseLayout>

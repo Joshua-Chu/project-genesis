@@ -27,6 +27,7 @@ interface Props {
 }
 
 const { page } = Astro.props;
+const { tag } = Astro.params;
 
 const paginationProps = {
   ...(page.url.prev && {
@@ -45,7 +46,11 @@ const paginationProps = {
 ---
 
 <BaseLayout meta={{ title: "taggg" }}>
-  <h1>Articles with Tags</h1>
+  <h1 class="tags-header">
+    <a href="/tags">tags</a>
+    <span class="tags-header__arrow">→</span>
+    #{tag}
+  </h1>
 
   {page.data.map((d) => <ArticlePreview article={d} />)}
   <Paginator {...paginationProps} />
@@ -54,9 +59,21 @@ const paginationProps = {
 <style lang="scss">
   @import "@/styles/variables.scss";
 
-  h1 {
+  .tags-header {
     font-size: var(--font-xl);
-    color: var(--color-yellow);
     margin-bottom: 28px;
+    a {
+      color: var(--color-yellow);
+      margin-inline-end: 4px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__arrow {
+      font-weight: 100;
+      font-size: var(--font-body);
+    }
   }
 </style>

@@ -8,13 +8,13 @@ const allTags = getUniqueTagsWithCount(allArticles);
 
 <!-- TODO: META TAGS -->
 <BaseLayout meta={{ title: "tags" }}>
-  <h1>All Tags With Possts</h1>
+  <h1>tags</h1>
 
-  <div>
+  <div class="tags">
     {
       allTags.map(([tag, count]) => (
-        <div>
-          <span>
+        <div class="tags__link-container">
+          <span class="tag">
             <a href={`/tags/${tag}`}>#{tag}</a>
           </span>
           - {count} {count > 1 ? "articles" : "article"}
@@ -23,3 +23,28 @@ const allTags = getUniqueTagsWithCount(allArticles);
     }
   </div>
 </BaseLayout>
+
+<style lang="scss">
+  @import "@/styles/variables.scss";
+
+  h1 {
+    font-size: var(--font-xl);
+    color: var(--color-yellow);
+    margin-bottom: 28px;
+  }
+
+  .tags {
+    &__link-container {
+      margin-block-end: 28px;
+    }
+    .tag {
+      border-block-end: 1px solid;
+      padding-block-end: 4px;
+      transition: border-color 100ms ease-in-out;
+
+      &:hover {
+        border-color: var(--color-yellow);
+      }
+    }
+  }
+</style>
