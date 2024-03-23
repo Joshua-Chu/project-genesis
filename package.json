@@ -19,10 +19,14 @@
     "rehype-external-links": "^3.0.0",
     "remark-unwrap-images": "^4.0.0",
     "sass": "^1.72.0",
+    "satori-html": "^0.3.2",
     "typescript": "^5.4.2"
   },
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "satori": "^0.10.13",
+    "sharp": "^0.33.2"
   }
 }

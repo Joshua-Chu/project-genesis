@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 ---
 
-<html>
+<html lang={siteConfig.lang}>
   <head>
     <BaseHead
       articleDate={articleDate}
@@ -33,9 +33,10 @@ const {
       <slot />
     </main>
     <Footer />
-  </body><style>
-    #main {
-      min-height: 100vh;
-    }
-  </style>
+    <style>
+      #main {
+        min-height: 100vh;
+      }
+    </style>
+  </body>
 </html>

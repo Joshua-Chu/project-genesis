@@ -7,7 +7,12 @@ const allTags = getUniqueTagsWithCount(allArticles);
 ---
 
 <!-- TODO: META TAGS -->
-<BaseLayout meta={{ title: "tags" }}>
+<BaseLayout
+  meta={{
+    title: "All tags",
+    description: "A list of all the articles I've written'",
+  }}
+>
   <h1>tags</h1>
 
   <div class="tags">
