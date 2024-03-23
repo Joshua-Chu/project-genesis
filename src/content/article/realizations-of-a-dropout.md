@@ -16,7 +16,7 @@ For the past two years, I’ve been hiding the fact that I’m a college dropout
 
 The pandemic got me into a depressive state. For three months, I barely ate and did intense 2-shift workouts. I believe I was at the lowest point of my life. With so much time alone, My mind began to wander and question things.
 
-This feeling was amplified by how unsatisfied I was with the education system; as a whole. Not just with UP but the entire education body in the Philippines. They weren’t ready for a catastrophe of this magnitude. It was further exposed by the number of dropouts in late 2020, which skyrocketed to more than [2 million students](https://www.rappler.com/nation/gatchalian-says-millions-dropouts-schools-adapt-pandemic/)
+This feeling was amplified by how unsatisfied I was with the education system; as a whole, not just with UP but the entire education body in the Philippines. They weren’t ready for a catastrophe of this magnitude. It was further exposed by the number of dropouts in late 2020, which skyrocketed to more than [2 million students](https://www.rappler.com/nation/gatchalian-says-millions-dropouts-schools-adapt-pandemic/)
 
 **2 million** isn’t just a number; It’s a signal for change.
 
@@ -50,7 +50,7 @@ We are used to learning in a homogenous environment where everyone is treated eq
 
 The problem with uniformity in a homogenous environment is the lack of bandwidth for students that needs more attention. We call our classes homogenous but the sad reality points us to the fact that every student/individual has varying levels of comprehension. What works for one might not work well for the others. As such, it is only reasonable for us to treat different students based on their needs, dictated by the actual guidance they need and not by limiting quotas or deadlines. A detailed article explaining a great alternative to the uniform, factory-based learning approach which is mastery-based learning can be found [here](https://launchschool.com/mastery)
 
-### 3. Unnecessary workload and extended responsibility of teachers
+### 3. Unnecessary workload and extended responsibilities of teachers
 
 Teaching is already an energy-intensive activity, which drains an individual in all aspects of his/her being. Yet, we continue to burden our teachers with unnecessary paperwork beyond what they are ( should ) expected to do. [A study](https://www.researchgate.net/publication/354177928_Teaching-Related_Paperwork_Examining_Linkage_to_Occupational_Stress_of_Public_School_Teachers_in_Primary_Education) concludes, that this paperwork causes a lot of stress to our educators. This would sometimes result in a compromise in the quality of education.
 
@@ -71,4 +71,5 @@ I got to a point where I was able to get a job out of the things I learned on my
 Dropping out is not a magic spell that immediately hands you a job or anything you thought you might get out of it. It’s a metal ball chain wrapped around your ankle, and although you can still walk the same path any non-dropout could, it would mean that you have to do two times or more the effort they’re exerting, trying to compensate for what you’ve lost from dropping out.
 
 It makes me sick thinking about how it affects my family more than me. It makes me sick, thinking about the stigma around it, blaming students instead of trying to correct the system.
+
 After all, a sheep separated from the pack is not lost if herded back.
