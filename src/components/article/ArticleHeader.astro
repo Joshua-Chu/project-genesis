@@ -1,4 +1,5 @@
 ---
+import { getFormattedDate } from "@/utils/date";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -6,8 +7,58 @@ interface Props {
 }
 
 const { article } = Astro.props;
+const {
+  data: { title, publishDate, updatedDate },
+  render,
+} = article;
+const { remarkPluginFrontmatter } = await render();
+const publishedDateFormatted = getFormattedDate(publishDate);
+const updatedDateFormatted = getFormattedDate(updatedDate || publishDate);
 ---
 
-<section></section>
+<div class="header">
+  <h1 class="header__title">
+    {title}
+  </h1>
+  <di class="header__meta-container">
+    <p class="header__meta-publish">{publishedDateFormatted}</p>
+    <p class="header__meta-separator">/</p>
+    <p class="header__meta-minutes">{remarkPluginFrontmatter.minutesRead}</p>
+    <p class="header__meta-updated">Last Updated: {updatedDateFormatted}</p>
+  </di>
+</div>
 
-<style lang="scss"></style>
+<style lang="scss">
+  @import "@/styles/variables.scss";
+
+  .header {
+    margin-bottom: 60px;
+    &__title {
+      font-size: var(--font-xl);
+      margin-block-end: 4px;
+    }
+
+    &__meta-container {
+      display: flex;
+      align-items: center;
+      padding-inline: 16px;
+      font-size: var(--font-xs);
+    }
+
+    &__meta-separator {
+      margin-inline: 8px;
+    }
+
+    &__meta-minutes {
+      margin-inline-end: 16px;
+    }
+
+    &__meta-updated {
+      background-color: var(--color-yellow);
+      color: var(--bg-gray);
+      padding-inline: 6px;
+      padding-block: 2px;
+      border-radius: 8px;
+    }
+  }
+</style>

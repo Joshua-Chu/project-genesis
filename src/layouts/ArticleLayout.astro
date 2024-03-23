@@ -1,4 +1,5 @@
 ---
+import AstroHeader from "@/components/article/ArticleHeader.astro";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./Base.astro";
 
@@ -16,14 +17,14 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 
 <BaseLayout meta={{ articleDate, description, title }}>
   <article id="article">
+    <div>
+      <AstroHeader article={article} />
+    </div>
     <slot />
   </article>
 </BaseLayout>
 
 <style lang="scss" is:global>
-  h1 {
-    text-align: center;
-  }
   #article {
     img {
       width: 100%;
