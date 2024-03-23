@@ -1,9 +1,11 @@
+import partytown from "@astrojs/partytown";
 import expressiveCode from "astro-expressive-code";
 import { defineConfig } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
 import remarkUnwrapImages from "remark-unwrap-images";
 import { expressiveCodeOptions } from "./src/site.config";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.imjosh.tech/",
@@ -19,13 +21,19 @@ export default defineConfig({
       ],
     ],
   },
-  integrations: [expressiveCode(expressiveCodeOptions)],
+  integrations: [
+    expressiveCode(expressiveCodeOptions),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
   trailingSlash: "never",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
   },
 });
-
 function rawFonts(ext) {
   return {
     name: "vite-plugin-raw-fonts",
