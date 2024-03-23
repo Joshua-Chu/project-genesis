@@ -27,10 +27,35 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 
 <style lang="scss" is:global>
   #article {
+    margin-bottom: 64px;
     img {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
+    }
+
+    h2,
+    h3 {
+      margin-block-start: 28px;
+      margin-block-end: 20px;
+    }
+    p {
+      margin-block-end: 16px;
+    }
+
+    blockquote {
+      opacity: 0.8;
+      border-left: 4px solid var(--color-gray);
+      padding-inline-start: 12px;
+    }
+
+    a {
+      color: var(--color-yellow);
+      text-decoration: underline;
+    }
+
+    strong {
+      color: white;
     }
   }
 </style>
