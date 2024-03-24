@@ -3,7 +3,6 @@ title: "How to setup Prettier, ESLint, Husky and Lint-Staged with a NextJS and T
 description: "This article is about setting up Prettier, ESLint, Husky and Lint-Staged with a NextJS and Typescript Project "
 publishDate: "Mar 6 2022"
 tags: ["javascript", "nextjs", "webdev"]
-draft: true
 ---
 
 Working in a team can sometimes be challenging, we try to make our codebase look like it has been coded by one person. We can do this by adhering to a code style/format that everyone should follow.
