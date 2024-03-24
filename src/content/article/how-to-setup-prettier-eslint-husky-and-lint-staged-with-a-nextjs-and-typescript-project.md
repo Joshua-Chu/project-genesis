@@ -1,5 +1,5 @@
 ---
-title: "How to setup Prettier, ESLint, Husky and Lint-Staged with a NextJS and Typescript Project"
+title: "how to setup prettier, esLint, husky and lint-staged with a nextjs and typescript project"
 description: "This article is about setting up Prettier, ESLint, Husky and Lint-Staged with a NextJS and Typescript Project "
 publishDate: "Mar 6 2022"
 tags: ["javascript", "nextjs", "webdev"]
