@@ -2,14 +2,15 @@
 import ArticlePreview from "@/components/article/ArticlePreview.astro";
 import Paginator from "@/components/Paginator.astro";
 import BaseLayout from "@/layouts/Base.astro";
-import { getAllArticles } from "@/utils/data";
+import { getAllArticles, sortMDByDate } from "@/utils/data";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allArticles = await getAllArticles();
+  const articlesSorted = sortMDByDate(allArticles);
 
-  return paginate(allArticles, { pageSize: 5 });
+  return paginate(articlesSorted, { pageSize: 5 });
 }) satisfies GetStaticPaths;
 
 interface Props {

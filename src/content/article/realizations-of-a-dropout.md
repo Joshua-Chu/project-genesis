@@ -6,8 +6,6 @@ updatedDate: 23 Mar 2024
 tags: ["rant", "education", "life"]
 ---
 
-## 𝗥𝗲𝗮𝗹𝗶𝘇𝗮𝘁𝗶𝗼𝗻𝘀 𝗼𝗳 𝗮 𝗱𝗿𝗼𝗽𝗼𝘂𝘁.
-
 For the past two years, I’ve been hiding the fact that I’m a college dropout. I was an incoming 2nd-year Computer Science shiftee at the University of the Philippines VTC when I decided to stop. I know that this article would raise a lot of eyebrows, questions, and pitchforks ( hopefully none ). But, here I am: still not a founder of a unicorn company.
 
 > A little disclaimer. My take on this would be according to my personal experiences before I decided to drop out. These are my sentiments and perception of things.
